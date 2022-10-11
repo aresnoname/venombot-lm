@@ -503,7 +503,8 @@ async function notifyCastle(client, message, parameter) {
     if (parameter != '') {
         await User.findAll({
             where: {
-                castle_id: parameter
+                castle_id: parameter,
+                shield_status: 1
             }
         }).then((result) => {
             resultReturn = result
