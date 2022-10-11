@@ -101,6 +101,31 @@ async function start(client) {
 *-* Registra o seu numero no banco de dados do bot.
 
 *# ---------------------- #*
+*# ---------------------- #*
+
+*/definirCastelo nome_do_castelo* ->
+*-* Anexa o nome do seu castelo ao seu numero whats no bot
+
+exemplo: */definirCastelo Nick Name*
+
+*# ---------------------- #*
+
+*/statusEscudo On ou Off* ->
+*-* Ativa ou desativa as notificações que você recebera caso alguem veja seu castelo sem escudo!
+
+exemplo: */statusEscudo On*
+
+*# ---------------------- #*
+
+*/semEscudo nome_do_castelo* ->
+*-* Comando para notificar o dono do castelo que está sem escudo!
+
+exemplo: */semEscudo Fulano X*
+
+*# ---------------------- #*
+*# ---------------------- #*
+*# ---------------------- #*
+*# ---------------------- #*
 
 */infernalDefinirTempo 0-23* ->
 *-* Define o horário que será permitido receber notificações.
