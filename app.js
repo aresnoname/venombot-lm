@@ -92,7 +92,9 @@ async function start(client) {
     // Comando help, mostra todos os comandos disponiveis
     if (command == '/help' && message.isGroupMsg === true) {
 
-        let dataMsgAdmin = await helpAdmin(message);
+        let dataMsgAdmin = await helpAdmin(message).catch((error) => {
+          console.log(error);
+        });
 
         dataMsg = `
 *Todos os comandos devem ser usados diretamente no grupo* 
@@ -301,11 +303,15 @@ exemplo: */statusNucleoTropa On*
 
         // Se for admin, recebe os comandos de admin
         if (dataMsgAdmin != false) {
-          await client.reply(message.sender.id, dataMsgAdmin, message.id);
+          await client.reply(message.sender.id, dataMsgAdmin, message.id).catch((error) => {
+            console.log(error);
+          });
         }
 
         // Envia os comandos normais
-        await client.reply(message.sender.id, dataMsg, message.id);
+        await client.reply(message.sender.id, dataMsg, message.id).catch((error) => {
+          console.log(error);
+        });
     }
 
 

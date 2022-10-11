@@ -28,7 +28,9 @@ app.get("/", async (req, res) => {
 async function helpAdmin(message) {
 
     // Verifica se é admin
-    let isAdmin = await checkAdmin(message.chat.id, message.sender.id);
+    let isAdmin = await checkAdmin(message.chat.id, message.sender.id).catch((error) => {
+        console.log(error);
+    });
 
     if (isAdmin[0] === true) {
         return `
@@ -64,7 +66,9 @@ async function newAdmin(client, message, parameter) {
     let messageReturn = '';
 
     // Verifica se é admin
-    let isAdmin = await checkAdmin(message.chat.id, message.sender.id);
+    let isAdmin = await checkAdmin(message.chat.id, message.sender.id).catch((error) => {
+        console.log(error);
+    });
 
     // Formata o numero para o padrão do whats
     let userId = parameter + '@c.us';
@@ -112,7 +116,9 @@ async function delAdmin (client, message, parameter){
     let messageReturn = '';
 
     // Verifica se é admin
-    let isAdmin = await checkAdmin(message.chat.id, message.sender.id);
+    let isAdmin = await checkAdmin(message.chat.id, message.sender.id).catch((error) => {
+        console.log(error);
+    });
 
     // Formata para o padrão do whats
     let userId = parameter + '@c.us';
